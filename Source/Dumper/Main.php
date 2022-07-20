@@ -5,6 +5,7 @@ include_once __DIR__ . '/Output.php';
 
 use Liloi\Dumper\Config;
 use Liloi\Dumper\Output;
+use Liloi\Dumper\Meta;
 
 Output::out('=-=-=-=-=-=-=-=-=-=-=-=-=-=');
 Output::out(Config::NAME);

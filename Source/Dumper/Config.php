@@ -16,7 +16,7 @@ class Config
     /**
      * Dumper version.
      */
-    public const VERSION = '0.1.0';
+    public const VERSION = '0.0.0';
 
     /**
      * Dumper author.
