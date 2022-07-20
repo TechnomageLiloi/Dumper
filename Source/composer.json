@@ -1,0 +1,18 @@
+{
+  "name": "anton-moskalenko/dumper",
+  "description": "Utility for dump files",
+  "require": {
+    "php": "^7.1 || ^8.0"
+  },
+  "type": "project",
+  "keywords": [
+    "anton-liloi-moskalenko",
+    "dumper"
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Liloi\\Dumper\\": "Dumper"
+    }
+  }
+}

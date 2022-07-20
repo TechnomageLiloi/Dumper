@@ -11,7 +11,7 @@ try
     $oPhar = new Phar($fnDumper);
     $oPhar->startBuffering();
 
-    $oPhar->setStub(Phar::createDefaultStub('Main.php'));
+    $oPhar->setStub(Phar::createDefaultStub('Dumper/Main.php'));
     $oPhar->buildFromDirectory(__DIR__ . '/Source');
 
     $oPhar->stopBuffering();
