@@ -23,12 +23,12 @@ class MetaTest extends TestCase
     public function testMethodResult(): void
     {
         $list = Meta::getList();
-        $atom = reset($list); // @todo: $atom must be object also
+        $atom = reset($list);
 
-        $this->assertEquals('Signum', $atom['title']);
-        $this->assertEquals('My signum', $atom['description']);
-        $this->assertEquals('file', $atom['type']); // @todo: add types as consts.
-        $this->assertEquals('https://drive.google.com/uc?export=download&id=1vmPddaL8h9lYmBjXotK0f-iXAWgHKTSt', $atom['global']);
-        $this->assertEquals('/Signum.png', $atom['local']);
+        $this->assertEquals('Signum', $atom->getTitle());
+        $this->assertEquals('My signum', $atom->getDescription());
+        $this->assertEquals('file', $atom->getType()); // @todo: add types as consts.
+        $this->assertEquals('https://drive.google.com/uc?export=download&id=1vmPddaL8h9lYmBjXotK0f-iXAWgHKTSt', $atom->getGlobal());
+        $this->assertEquals('/Signum.png', $atom->getLocal());
     }
 }
