@@ -1,1 +1,3 @@
-# dumper
+# Dumper
+
+## [Compile](./Docs/Compile.md)
