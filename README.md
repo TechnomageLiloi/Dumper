@@ -1,3 +1,3 @@
 # Dumper
 
-## [Compile](./Docs/Compile.md)
+## [Build](./Docs/Build.md)
