@@ -2,6 +2,11 @@
 
 namespace Liloi\Dumper;
 
+/**
+ * Output class.
+ *
+ * @package Liloi\Dumper
+ */
 class Output
 {
     /**
