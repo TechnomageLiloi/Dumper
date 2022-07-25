@@ -24,4 +24,15 @@ class AtomTest extends TestCase
         $this->assertEquals($list['title'], $atom->getTitle());
         $this->assertEquals($list['data'], $atom->getData());
     }
+
+    public function testParamDoesNotExist(): void
+    {
+        $this->expectException(\Judex\Checks\CheckTrue\Exception::class);
+        $list = [
+            'data' => 'Test'
+        ];
+
+        $atom = new Atom($list);
+        $atom->getTitle(); // Must throw exception.
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace Liloi\Dumper;
 
+use Judex\Assert;
+
 /**
  * Atom class.
  * @package Liloi\Dumper
@@ -17,7 +19,7 @@ class Atom
 
     /**
      * Atom constructor.
-     * @todo Realize: exception, if data is empty.
+     *
      * @param array $data Atom parameters.
      */
     public function __construct(array $data = [])
@@ -28,14 +30,19 @@ class Atom
     /**
      * Magic call for infinite 'get'.
      * Other methods are not allowed.
+     *
+     * @param string $nameMethod Method name.
+     * @param array $data Method parameters.
+     * @return mixed Some params.
      * @todo Realize: add exception, if other methods.
      *
-     * @param string $name
-     * @param array $data
-     * @return mixed
      */
-    public function __call(string $name, array $data)
+    public function __call(string $nameMethod, array $data)
     {
-        return $this->data[strtolower(str_replace('get', '', $name))];
+        $nameParam = strtolower(str_replace('get', '', $nameMethod));
+
+        Assert::true(isset($this->data[$nameParam]), 'Parameter does not exist.');
+
+        return $this->data[$nameParam];
     }
 }
