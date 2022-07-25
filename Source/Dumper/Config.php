@@ -22,4 +22,13 @@ class Config
      * Dumper author.
      */
     public const AUTHOR = 'Anton Lilôi Moskalenko';
+
+    /**
+     * @todo Add test
+     * @return string
+     */
+    public static function getDumperDirectory(): string
+    {
+        return str_replace('phar://', '', dirname(__DIR__, 2));
+    }
 }

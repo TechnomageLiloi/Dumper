@@ -12,3 +12,5 @@ Output::out(Config::NAME);
 Output::out(Config::VERSION);
 Output::out(Config::AUTHOR);
 Output::out('=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+
+Meta::dump();

@@ -28,11 +28,26 @@ class AtomTest extends TestCase
     public function testParamDoesNotExist(): void
     {
         $this->expectException(\Judex\Checks\CheckTrue\Exception::class);
+        $this->expectExceptionCode('param-does-not-exist');
+
         $list = [
             'data' => 'Test'
         ];
 
         $atom = new Atom($list);
         $atom->getTitle(); // Must throw exception.
+    }
+
+    public function testParamIncorrectMethod(): void
+    {
+        $this->expectException(\Judex\Checks\CheckTrue\Exception::class);
+        $this->expectExceptionCode('incorrect-method');
+
+        $list = [
+            'data' => 'Test'
+        ];
+
+        $atom = new Atom($list);
+        $atom->test();
     }
 }

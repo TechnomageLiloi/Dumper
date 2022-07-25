@@ -39,9 +39,11 @@ class Atom
      */
     public function __call(string $nameMethod, array $data)
     {
+        Assert::true(strpos($nameMethod, 'get') === 0, 'Incorrect method', 'incorrect-method');
+
         $nameParam = strtolower(str_replace('get', '', $nameMethod));
 
-        Assert::true(isset($this->data[$nameParam]), 'Parameter does not exist.');
+        Assert::true(isset($this->data[$nameParam]), 'Parameter does not exist.', 'param-does-not-exist');
 
         return $this->data[$nameParam];
     }

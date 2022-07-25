@@ -73,4 +73,35 @@ class Meta
 
         return $list;
     }
+
+    /**
+     * Dump all atoms.
+     * @todo Add test (foreign systems request check; ).
+     */
+    public static function dump(): void
+    {
+        $dirDumper = Config::getDumperDirectory();
+        $atoms = self::getList();
+
+        /** @var Atom $atom */
+        foreach ($atoms as $atom)
+        {
+            $local = $dirDumper . $atom->getLocal();
+            $dirLocal = dirname($local);
+            $global = $atom->getGlobal();
+
+            if(!is_dir($dirLocal))
+            {
+                mkdir($dirLocal, 0777, true);
+            }
+
+            $request = sprintf(
+                'wget "%s" -O "%s"',
+                $global,
+                $local
+            );
+
+            shell_exec($request);
+        }
+    }
 }
