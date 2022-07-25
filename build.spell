@@ -3,4 +3,4 @@
 cd Source
 composer install
 cd ..
-php Build.php
+php build.php
