@@ -2,7 +2,9 @@
   "name": "anton-moskalenko/dumper",
   "description": "Utility for dump files",
   "require": {
-    "php": "^7.1 || ^8.0"
+    "php": "^7.1 || ^8.0",
+    "anton-moskalenko/judex": "dev-master",
+    "anton-moskalenko/php-tools": "dev-main"
   },
   "type": "project",
   "keywords": [
