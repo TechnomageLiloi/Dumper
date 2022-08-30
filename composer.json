@@ -3,7 +3,7 @@
   "description": "Utility for dump files",
   "require": {
     "php": "^7.4 || ^8.0",
-    "anton-moskalenko/judex": "0.1.2",
+    "anton-moskalenko/judex": "dev-master",
     "anton-moskalenko/php-tools": "dev-main"
   },
   "type": "project",
