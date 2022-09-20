@@ -1,4 +1,4 @@
-# Build dumper
+# Build dumper with predefined config files
 
 ## Algorithm:
 
