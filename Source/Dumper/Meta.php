@@ -17,7 +17,6 @@ class Meta
      */
     public static function getList(): array
     {
-
         $dirMeta = __DIR__ . '/../Meta';
         $fnsAtoms = self::getDirContents($dirMeta);
 
@@ -77,11 +76,33 @@ class Meta
     /**
      * Dump all atoms.
      * @todo Add test (foreign systems request check; ).
+     *
+     * @param array $source List of files (if empty - dumper will search in /Meta directory). See Example.atom for format.
+     * @param string $dirBase Base directory.
      */
-    public static function dump(): void
+    public static function dump(array $source = [], string $dirBase = ''): void
     {
-        $dirDumper = Config::getDumperDirectory();
-        $atoms = self::getList();
+        if(empty($dirBase))
+        {
+            $dirDumper = Config::getDumperDirectory();
+        }
+        else
+        {
+            $dirDumper = $dirBase;
+        }
+
+        if(empty($source))
+        {
+            $atoms = self::getList();
+        }
+        else
+        {
+            $atoms = [];
+            foreach($source as $datum)
+            {
+                $atoms[] = new Atom($datum);
+            }
+        }
 
         /** @var Atom $atom */
         foreach ($atoms as $atom)
