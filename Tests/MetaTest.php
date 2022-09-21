@@ -31,4 +31,20 @@ class MetaTest extends TestCase
         $this->assertEquals('https://drive.google.com/uc?export=download&id=1vmPddaL8h9lYmBjXotK0f-iXAWgHKTSt', $atom->getGlobal());
         $this->assertEquals('/Signum.png', $atom->getLocal());
     }
+
+    /**
+     * Tests {@link Meta::dump()} method (dynamically).
+     */
+    public function testDynamicallyDump(): void
+    {
+        Meta::dump([[
+            "title" => "Signum",
+            "description" => "My signum",
+            "type" => "file",
+            "global" => "https://drive.google.com/uc?export=download&id=1vmPddaL8h9lYmBjXotK0f-iXAWgHKTSt",
+            "local" => "/Signum.png"
+        ]], __DIR__);
+
+        $this->assertTrue(file_exists(__DIR__ . '/Signum.png'));
+    }
 }
