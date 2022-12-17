@@ -37,6 +37,13 @@ class MetaTest extends TestCase
      */
     public function testDynamicallyDump(): void
     {
+        $fn = __DIR__ . '/Signum.png';
+
+        if(file_exists($fn))
+        {
+            unlink($fn);
+        }
+
         Meta::dump([[
             "title" => "Signum",
             "description" => "My signum",
@@ -45,6 +52,6 @@ class MetaTest extends TestCase
             "local" => "/Signum.png"
         ]], __DIR__);
 
-        $this->assertTrue(file_exists(__DIR__ . '/Signum.png'));
+        $this->assertTrue(file_exists($fn));
     }
 }

@@ -1,4 +1,6 @@
 /sandbox/Dumper.phar
 /.phpunit.result.cache
 /.idea/
-/sandbox/
+/Sandbox/
+/vendor/
+/composer.lock
