@@ -2,3 +2,5 @@
 /.phpunit.result.cache
 /.idea/
 /Sandbox/
+/vendor/
+/composer.lock
