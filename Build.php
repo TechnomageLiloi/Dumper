@@ -1,6 +1,6 @@
 <?php
 
-$fnDumper = 'dumper.phar';
+$fnDumper = 'Dumper.phar';
 
 try
 {
