@@ -20,6 +20,11 @@ class Entity extends AbstractEntity
         return $this->getField('key_atom');
     }
 
+    public function getVersionKey(): string
+    {
+        return $this->getField('key_version');
+    }
+
     /**
      * Get description.
      *
@@ -44,9 +49,18 @@ class Entity extends AbstractEntity
      *
      * @return string Exercise type.
      */
-    public function getSummaryParse(): string
+    public function getType(): string
     {
-        return Parser::parseString($this->getField('summary'));
+        return $this->getField('type');
+    }
+
+    /**
+     * Set description.
+     */
+    public function setType(string $value): void
+    {
+        // @todo Add setField to php-tools
+        $this->data['type'] = $value;
     }
 
     /**
@@ -54,18 +68,18 @@ class Entity extends AbstractEntity
      *
      * @return string Exercise type.
      */
-    public function getSummary(): string
+    public function getStatus(): string
     {
-        return $this->getField('summary');
+        return $this->getField('status');
     }
 
     /**
      * Set description.
      */
-    public function setSummary(string $text_description): void
+    public function setStatus(string $value): void
     {
         // @todo Add setField to php-tools
-        $this->data['summary'] = $text_description;
+        $this->data['status'] = $value;
     }
 
     /**
@@ -85,5 +99,27 @@ class Entity extends AbstractEntity
     {
         // @todo Add setField to php-tools
         $this->data['data'] = $json_data;
+    }
+
+    public function getLocal(): string
+    {
+        return $this->getField('local');
+    }
+
+    public function setLocal(string $value): void
+    {
+        // @todo Add setField to php-tools
+        $this->data['local'] = $value;
+    }
+
+    public function getGlobal(): string
+    {
+        return $this->getField('global');
+    }
+
+    public function setGlobal(string $value): void
+    {
+        // @todo Add setField to php-tools
+        $this->data['global'] = $value;
     }
 }
