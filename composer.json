@@ -4,7 +4,7 @@
   "require": {
     "php": "^7.4 || ^8.0",
     "anton-moskalenko/judex": "dev-master",
-    "anton-moskalenko/php-tools": "dev-main"
+    "anton-moskalenko/rune-tools": "dev-main"
   },
   "type": "project",
   "keywords": [
