@@ -8,4 +8,4 @@ then
 fi
 composer install
 cd ..
-php build.php
+php Build.php
