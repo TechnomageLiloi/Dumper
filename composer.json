@@ -1,14 +1,14 @@
 {
-  "name": "anton-moskalenko/dumper",
+  "name": "technomage-liloi/dumper",
   "description": "Utility for dump files",
   "require": {
     "php": "^7.4 || ^8.0",
-    "anton-moskalenko/judex": "dev-master",
-    "anton-moskalenko/rune-tools": "dev-main"
+    "technomage-liloi/judex": "dev-main",
+    "technomage-liloi/rune-tools": "dev-main"
   },
   "type": "project",
   "keywords": [
-    "anton-liloi-moskalenko",
+    "anton-moskalenko",
     "dumper"
   ],
   "minimum-stability": "dev",
