@@ -107,6 +107,8 @@ class Meta
         /** @var Atom $atom */
         foreach ($atoms as $atom)
         {
+            $type = $atom->getType();
+
             $local = $dirDumper . $atom->getLocal();
             $dirLocal = dirname($local);
             $global = $atom->getGlobal();
@@ -116,11 +118,25 @@ class Meta
                 mkdir($dirLocal, 0777, true);
             }
 
-            $request = sprintf(
-                'wget "%s" -O "%s"',
-                $global,
-                $local
-            );
+            if($type === 'file')
+            {
+                $request = sprintf(
+                    'wget "%s" -O "%s"',
+                    $global,
+                    $local
+                );
+            }
+            elseif ($type === 'repository')
+            {
+                $token = $atom->getToken();
+
+                $request = sprintf(
+                    'curl -H "Authorization: token %s" -L %s > %s',
+                    $token,
+                    $global,
+                    $local
+                );
+            }
 
             shell_exec($request);
         }

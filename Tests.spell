@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-cd Source
-composer install
-cd ..
-phpunit
