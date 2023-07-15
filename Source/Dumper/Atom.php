@@ -2,7 +2,7 @@
 
 namespace Liloi\Dumper;
 
-use Judex\Assert;
+use Liloi\Judex\Assert;
 
 /**
  * Atom class.
