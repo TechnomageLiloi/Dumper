@@ -10,6 +10,8 @@ use Liloi\Dumper\Atom;
  */
 class Meta
 {
+    public static string $dirMeta = '';
+
     /**
      * Gets meta atoms list.
      *
@@ -17,8 +19,8 @@ class Meta
      */
     public static function getList(): array
     {
-        $dirMeta = __DIR__ . '/../Meta';
-        $fnsAtoms = self::getDirContents($dirMeta);
+        self::$dirMeta = __DIR__ . '/../Meta';
+        $fnsAtoms = self::getDirContents(self::$dirMeta);
 
         $list = [];
 
@@ -108,8 +110,15 @@ class Meta
         foreach ($atoms as $atom)
         {
             $type = $atom->getType();
-
             $local = $dirDumper . $atom->getLocal();
+
+            if ($type === 'local')
+            {
+                $link = self::$dirMeta . $atom->getLink();
+                copy($link, $local);
+                continue;
+            }
+
             $dirLocal = dirname($local);
             $global = $atom->getGlobal();
 
