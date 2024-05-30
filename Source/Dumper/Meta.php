@@ -10,6 +10,8 @@ use Liloi\Dumper\Atom;
  */
 class Meta
 {
+    public static string $dirMeta = '';
+
     /**
      * Gets meta atoms list.
      *
@@ -17,8 +19,8 @@ class Meta
      */
     public static function getList(): array
     {
-        $dirMeta = __DIR__ . '/../Meta';
-        $fnsAtoms = self::getDirContents($dirMeta);
+        self::$dirMeta = __DIR__ . '/../Meta';
+        $fnsAtoms = self::getDirContents(self::$dirMeta);
 
         $list = [];
 
@@ -80,36 +82,24 @@ class Meta
      * @param array $source List of files (if empty - dumper will search in /Meta directory). See Example.atom for format.
      * @param string $dirBase Base directory.
      */
-    public static function dump(array $source = [], string $dirBase = ''): void
+    public static function dump(): void
     {
-        if(empty($dirBase))
-        {
-            $dirDumper = Config::getDumperDirectory();
-        }
-        else
-        {
-            $dirDumper = $dirBase;
-        }
-
-        if(empty($source))
-        {
-            $atoms = self::getList();
-        }
-        else
-        {
-            $atoms = [];
-            foreach($source as $datum)
-            {
-                $atoms[] = new Atom($datum);
-            }
-        }
+        $dirDumper = Config::getDumperDirectory();
+        $atoms = self::getList();
 
         /** @var Atom $atom */
         foreach ($atoms as $atom)
         {
             $type = $atom->getType();
-
             $local = $dirDumper . $atom->getLocal();
+
+            if ($type === 'local')
+            {
+                $link = self::$dirMeta . $atom->getLink();
+                copy($link, $local);
+                continue;
+            }
+
             $dirLocal = dirname($local);
             $global = $atom->getGlobal();
 

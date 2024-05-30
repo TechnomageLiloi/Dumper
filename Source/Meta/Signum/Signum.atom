@@ -1,7 +1,7 @@
 [
   {
     "title": "Signum",
-    "description": "My signum",
+    "description": "Signum description",
     "type": "file",
     "global": "https://drive.google.com/uc?export=download&id=1vmPddaL8h9lYmBjXotK0f-iXAWgHKTSt",
     "local": "/Signum.png"
