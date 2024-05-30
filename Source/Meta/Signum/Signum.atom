@@ -1,23 +1,9 @@
 [
   {
     "title": "Signum",
-    "description": "My signum",
+    "description": "Signum description",
     "type": "file",
     "global": "https://drive.google.com/uc?export=download&id=1vmPddaL8h9lYmBjXotK0f-iXAWgHKTSt",
-    "local": "/Signum/Signum.png"
-  },
-  {
-    "title": "Signum (mini)",
-    "description": "My signum (mini)",
-    "type": "file",
-    "global": "https://drive.google.com/uc?export=download&id=1sspk4eWm10Tw33R0-Fu8xHG1EjbT7JcA",
-    "local": "/Signum/SignumMini.jpg"
-  },
-  {
-    "title": "Signum (archive/zip)",
-    "description": "Signum project",
-    "type": "file",
-    "global": "https://drive.google.com/uc?export=download&id=1PWuHIeBkjdIulFR2VgZFhLflI6abY0jS",
-    "local": "/Signum/Signify.zip"
+    "local": "/Signum.png"
   }
 ]
